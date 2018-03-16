@@ -1,0 +1,23 @@
+//binarySearchList
+
+public int binarySearchList(ArrayList <Integer> list, int target){
+  int high = list.size()-1;
+  int low = 0; 
+  while(high >= low)
+  {
+    int guess = (low+high)/2;
+    if (list.get(guess) == target)
+    {
+      return guess;
+    }
+    else if (list.get(guess) > target) //too high
+    {
+      high = guess-1; 
+    }
+    else //too low
+    {
+      low = guess + 1; 
+    }
+  }
+  return -1;
+}
