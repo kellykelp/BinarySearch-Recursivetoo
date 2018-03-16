@@ -1,0 +1,40 @@
+//recursiveBinarySearch
+
+public int recursiveBinarySearch(int [] a, int target, int low, int high){
+  if (low > high)
+  {
+    return -1; 
+  }
+  
+  int guess = (low + high)/2;
+  
+  if (a[guess] == target)
+  {
+    return guess;
+  }
+  else if (a[guess] < target) 
+  {
+    return recursiveBinarySearch(a, target, guess+1, high);
+  }
+  else if (a[guess] > target)
+  {
+    return recursiveBinarySearch(a, target, low, guess-1);
+  }
+  else
+  {
+    return -1; 
+  }
+}
+
+//their solution:
+// public int recursiveBinarySearch(int [] a, int target, int low, int high){
+//   if(low > high)
+//     return -1;
+//   int guess = (low + high)/2;
+//   if(a[guess] == target)
+//     return guess;
+//   else if(a[guess] < target)
+//     return recursiveBinarySearch(a, target, guess + 1, high);
+//   else //if(a[guess] > target)
+//     return recursiveBinarySearch(a, target, low, guess-1);
+// }
